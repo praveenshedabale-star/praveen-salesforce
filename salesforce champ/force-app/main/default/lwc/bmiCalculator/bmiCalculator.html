@@ -1,0 +1,39 @@
+<template>
+    <div class="App">
+        <br>
+        <div class="box">
+            <h1>BMI Calculator</h1>
+            <template lwc:if={showResult}>
+                <br>
+                <p>Youar BMI values is : {bmiValue} </p>
+                <br>
+                <lightning-button variant="brand" label="Re-calculate" title="Calculate BMI" onclick={callRecalculate} class="slds-m-around_large"></lightning-button>
+            </template>
+            <template lwc:else>
+                <form>
+                    <!--form content will come here-->
+                    <div class="slds-p-around_medium lgc-bg slds-text-title_bold">
+                        <lightning-input name="height" value={height} min="0"  type="number" label="Height" placeholder="Enter height in cm" required onchange={callHeight}></lightning-input>
+                    </div>
+                    <div class="slds-p-around_medium lgc-bg lds-text-title_bold">
+                        <lightning-input name="weight" value={weight} min="0" type="number" label="Weight" placeholder="Enter weight in kg" required onchange={callWeight}></lightning-input>
+                    </div>
+                    <lightning-button variant="brand" label="Calculate" title="Calculate BMI" onclick={handleClick} class="slds-m-around_large"></lightning-button>
+                </form>
+           </template>
+
+            <div class="info-wrapper">
+                <h2>What your BMI means</h2>
+                <p>Once you have measured your BMI, you can determine your healthy weight range. if your BMI is:</p>
+                <h3>Under 18.5</h3>
+                <p>You are considered underweight. You may want to talk to your doctor about gaining weight.</p>
+                <h3 class="good-number">18.5-24.9</h3>
+                <p>You are considered a healthy weight. Keep up the good work!</p>
+                <h3>25-29.9</h3>
+                <p>You are overweight.</p>
+                <h3>30 or higher</h3>
+                <p>You are considered obese. You may want to talk to your doctor about losing weight.</p>
+            </div>
+        </div>
+    </div>
+</template>

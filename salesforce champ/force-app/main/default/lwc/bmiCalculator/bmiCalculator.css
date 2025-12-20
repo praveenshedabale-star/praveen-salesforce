@@ -1,0 +1,51 @@
+:host(){
+    --dark-blue: #0b0d21;
+    --light-white:#fafafa;
+    --light-blue: #A7C7E7
+    --light-purple :#B700FF;
+    --size-16:16px;
+    --size-14:14px;
+    --size-12:12px;
+    --size-21:21px;
+}
+.App{
+    min-height: 100vh;
+    background-image: url(/sfsites/c/resource/bmiCalcAppBackground);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.box{
+    max-width: 419px;
+    text-align: center;
+    margin: auto;
+    background: var(--dark-blue);
+    color: var(--light-white);
+    padding: var(--size-16);
+    border-radius: 38px;
+}
+h1{
+    font-size: 36px;
+    padding: 20px 0;
+    font-weight: bold
+}
+h2{
+    font-size: 24px;
+    padding: 8px;
+    color: #BF19E0;
+}
+h3{
+    font-size: var(--size-21);
+    color: #E01919;
+    padding-top: 11px;
+}
+.good-number{
+    color: #35964F;
+}
+.info-wrapper{
+    background: #A0AAAD;
+    padding: 16px;
+    border-bottom-left-radius: 38px;
+    border-bottom-right-radius: 38px;
+    font-size: 16px;
+    text-align: center;
+}
