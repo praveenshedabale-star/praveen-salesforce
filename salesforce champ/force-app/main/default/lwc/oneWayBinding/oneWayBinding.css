@@ -1,0 +1,8 @@
+.oneWayBidning{
+    background-color :yellow;
+    color : black;
+    padding: 20px;
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin-bottom: 15px;
+}

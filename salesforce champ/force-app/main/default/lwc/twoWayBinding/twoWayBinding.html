@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Two way binding">
+        <div class="slds-m-around_medium twoWayBind">
+            <lightning-input type="number" name="title" label="Enter your title" onchange={changeHandler}>
+            </lightning-input>
+         </div> 
+         <div>
+             <p class="slds-m-around_medium">Entered number is : {number}</p>
+         </div>
+    </lightning-card>
+</template>
