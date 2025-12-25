@@ -1,6 +1,8 @@
 trigger LeadTrigger on Lead (before Update,After insert,Before Delete,before insert) {
     //Prevent duplicate lead creation.
-    
+    if(trigger.isBefore && trigger.isInsert){
+        LeadTriggerHandler2.stopDuplicateLeadCreation(trigger.new);
+    }
 //Whenever Lead is updated, Update Lead Status to Working-Contacted.
 // Whenever Lead is Updated and Industry is health care, set
 // lead source as purchased list,
