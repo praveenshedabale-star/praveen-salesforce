@@ -1,0 +1,20 @@
+<template>
+     <lightning-card title="Conditional Redering Example">
+        <div class="slds-m-around_medium">
+            <lightning-button variant="brand" label="Call to Render" title="Primary action" onclick={onchangeCall} class="slds-m-left_x-small"></lightning-button>
+            <template lwc:if={isValid}>
+                    <div class="newChat">
+                            <p>hi praveen,your name is valid</p>
+                    </div>
+            </template>
+            <template lwc:else>
+                        <div class='oldChat'>
+                            <p>hi praveen, your name is invalid</p>
+                        </div>
+            </template>
+
+        </div>
+
+     </lightning-card>
+
+</template>
