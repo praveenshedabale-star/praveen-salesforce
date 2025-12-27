@@ -89,5 +89,47 @@ public class OpportunityTriggerHandler {
         if(!otmList.isEmpty()){
             insert otmList;
         }
+
     }
+
+
+    //Whenever an opportunity is created or its amount is updated the related accounts total revenue should be recalculted.
+    public static void recalculateAccountRevenue(List<Opportunity> oppNewList,Map<Id, Opportunity> oldMap) {
+    Set<Id> accountIds = new Set<Id>();
+    // Step 1: Collect affected Account Ids
+        for (Opportunity opp : oppNewList) {
+            if (opp.AccountId == null) continue;
+
+            if (Trigger.isInsert ||(Trigger.isUpdate && opp.Amount != oldMap.get(opp.Id).Amount)) {
+                accountIds.add(opp.AccountId);
+            }
+        }
+
+        if (accountIds.isEmpty()) return;
+
+        // Step 2: Aggregate total opportunity amount per Account
+        Map<Id, Decimal> accountRevenueMap = new Map<Id, Decimal>();
+
+        for (AggregateResult ar : [
+            SELECT AccountId accId, SUM(Amount) totalAmount
+            FROM Opportunity
+            WHERE AccountId IN :accountIds
+            GROUP BY AccountId
+        ]) {
+            accountRevenueMap.put((Id) ar.get('accId'),(Decimal) ar.get('totalAmount'));
+        }
+
+        // Step 3: Update Accounts
+        List<Account> accountsToUpdate = new List<Account>();
+
+        for (Id accId : accountIds) {
+            Decimal revenue = accountRevenueMap.containsKey(accId)? accountRevenueMap.get(accId): 0;
+
+            accountsToUpdate.add(new Account(Id = accId,AnnualRevenue = revenue));
+        }
+        if (!accountsToUpdate.isEmpty()) {
+            update accountsToUpdate;
+        }
+    }
+
 }
