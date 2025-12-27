@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Imperative Apex Example 2">
+       <div class="slds-m-around_medium">
+            <lightning-button title="Click on me to see data" label="Click on me to see data" variant="brand" onclick={onClickGetAccounts} class="slds-m-left_x-small"></lightning-button>
+       </div> 
+       <template lwc:if={isChecked}>
+             <template for:each={Accounts} for:item="Account">
+                  <div key={Account.id} class="slds-m-around_medium">
+                        <p>{Account.Industry}</p>
+                  </div>
+             </template>
+       </template>
+    </lightning-card>
+</template>

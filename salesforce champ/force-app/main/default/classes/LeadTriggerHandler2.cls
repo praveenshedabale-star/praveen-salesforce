@@ -1,27 +1,26 @@
-//write a logic to avoid duplicate lead creation .
+//write a logic to avoid duplicate lead creation  based on Email.
 public class LeadTriggerHandler2{
 
-
-    public static void  stopDuplicateLeadCreation(List<Lead> newLeadList){
-        Set<String> emails = new Set<String>();
+    public static void stopDuplicateLeadCreation(List<Lead> newLeadList){
+        Set<String> leadEmails = new Set<String>();
         for(Lead ld : newLeadList){
             if(ld.Email != null){
-                    emails.add(ld.Email?.toLowerCase());
+                leadEmails.add(ld.Email.toLowerCase());
             }
         }
 
-        Map<String,Lead> mapLead = new Map<String,Lead>();
-        if(!emails.isEmpty()){
-            for(Lead ld : [select id,Email from Lead where Email in : emails]){
-                mapLead.put(ld.Email,ld);
+        if(!leadEmails.isEmpty()){
+            Map<String,Lead> leadMap = new Map<String,Lead>();
+            for(Lead emailLead : [select id, Email from Lead where Email In : leadEmails]){
+                leadMap.put(emailLead.Email.toLowerCase(),emailLead);
             }
 
-            for(Lead l : newLeadList){
-                if(!mapLead.isEmpty() && mapLead.containsKey(l.Email?.toLowerCase())){
-                    l.addError('hey guys!...Duplicate Leads cannot be created, there is an existing lead with same email');
+            for(Lead ld : newLeadList){
+                if(!leadMap.isEmpty() && leadMap.ContainsKey(ld.Email.toLowerCase())){
+                    Id existingId = leadMap.get(ld.Email).id;
+                    ld.addError('Duplicate Email creation is strictly prohbited!! pls go to this Lead record to see the already existing email -  '+existingId);
                 }
             }
         }
     }
-
 }
