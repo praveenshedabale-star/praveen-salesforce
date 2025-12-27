@@ -23,4 +23,27 @@ public class LeadTriggerHandler2{
             }
         }
     }
+
+    //when lead is created /updated  if a contact with same email exist, then restrict the lead to being saved.
+    public static void  stopDuplicateLeadBasedOnContactEmail(List<Lead> newListLead, Map<Id,Lead> oldMap){
+         Set<String> emailSet = new Set<String>();
+          for(Lead ld : newListLead){
+                if(ld.Email != null && (Trigger.isInsert || (Trigger.isUpdate && ld.Email != oldMap.get(ld.id).Email))){
+                        emailSet.add(ld.Email.toLowerCase());
+                }
+          }
+          if(!emailSet.isEmpty()){
+                Map<Id,Contact> existingConMap = new Map<Id,Contact>();
+                for(Contact con : [select id, Email from Contact where Email in : emailSet]){
+                        existingConMap.put(con.Email.toLowerCase(),con);
+                }
+
+                for(Lead ld : newListLead){
+                    if(!existingConMap.isEmpty() && existingConMap.containsKey(ld.Email.toLowerCase())){
+                         Id existingId = existingConMap.get(ld.Email.toLowerCase()).id;
+                         ld.addError('There is an existing Contact with Id : '+existingId+' pls don\'t add same Email in new Lead or existing Lead');
+                    }
+                }
+          }
+    }
 }
