@@ -44,4 +44,13 @@ public class AccountHandler{
             insert conList;
         }
     }
+
+    //Update description with username whenever Account record is edited.
+    public static void updateDescription(List<Account> newList,Map<id,Account> oldMap){
+        for(Account acc : newList){
+           if(Trigger.isUpdate && !oldMap.isEmpty()){
+                acc.description = 'LastModified user name on this Account is : '+userInfo.getName();
+           }
+        }
+      }
 }

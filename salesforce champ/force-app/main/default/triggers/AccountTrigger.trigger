@@ -6,6 +6,7 @@ trigger AccountTrigger on Account (before update, after update,after insert,befo
     }
     if(Trigger.isBefore  && Trigger.isUpdate){
         AccountTriggerHandler.accountTriggerHandlerBeforeUpdate(Trigger.new,Trigger.OldMap);
+        AccountHandler.updateDescription(trigger.new,trigger.oldMap);
     }
     
     if(Trigger.isAfter && Trigger.isUpdate){

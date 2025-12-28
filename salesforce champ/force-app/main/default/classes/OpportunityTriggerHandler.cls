@@ -131,5 +131,4 @@ public class OpportunityTriggerHandler {
             update accountsToUpdate;
         }
     }
-
 }
