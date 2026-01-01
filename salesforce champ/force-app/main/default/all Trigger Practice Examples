@@ -1,8 +1,8 @@
+Trigger 1:
+//When case is created or updated with priority as High, update the custom field High priority case count field on
+//Account reflecting the total number of high priority cases.
 trigger CaseTrigger on Case (before insert, Before Delete,after insert , after update) {
-    
-    //When case is created or updated with priority as High, update the custom field High priority case count field on
-    //Account reflecting the total number of high priority cases.
-    if(Trigger.isAfter){
+   if(Trigger.isAfter){
         Set<Id> accountIds = new Set<Id>();
         Map<id,integer> highPriorityCountMap = new Map<id,integer>();
         List<Account> accUpdateList = new List<Account>();
@@ -26,32 +26,6 @@ trigger CaseTrigger on Case (before insert, Before Delete,after insert , after u
                 Update accUpdateList;
             }
         }
-        
-    }
-    
-    
-    
-                  
-    
-    
-    
-    
-//When case is created, if case origin is Phone, set priority High, else set priority as Low.
-    if(Trigger.isBefore && Trigger.isinsert){
-        for(Case caseRec : trigger.New){
-            if(caseRec.Origin == 'Phone'){
-                caseRec.Priority = 'High';
-            }else{
-                caseRec.Priority = 'Low';
-            }
-        }
-    }
-    
-    if(Trigger.isBefore && Trigger.isDelete){
-        CaseTriggerHandler.caseTeriggerBeforeDelete(Trigger.Old);
-    }
-    
-    if(Trigger.isinsert || Trigger.isUpdate){
         
     }
 }
