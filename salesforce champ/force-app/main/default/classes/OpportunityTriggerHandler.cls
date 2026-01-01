@@ -128,7 +128,7 @@ public class OpportunityTriggerHandler {
             accountsToUpdate.add(new Account(Id = accId,AnnualRevenue = revenue));
         }
         if (!accountsToUpdate.isEmpty()) {
-            update accountsToUpdate;
+          //  update accountsToUpdate;
         }
     }
 }

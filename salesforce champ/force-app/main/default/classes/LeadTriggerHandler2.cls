@@ -18,7 +18,7 @@ public class LeadTriggerHandler2{
             for(Lead ld : newLeadList){
                 if(!leadMap.isEmpty() && leadMap.ContainsKey(ld.Email.toLowerCase())){
                     Id existingId = leadMap.get(ld.Email).id;
-                    ld.addError('Duplicate Email creation is strictly prohbited!! pls go to this Lead record to see the already existing email -  '+existingId);
+                   // ld.addError('Duplicate Email creation is strictly prohbited!! pls go to this Lead record to see the already existing email -  '+existingId);
                 }
             }
         }
