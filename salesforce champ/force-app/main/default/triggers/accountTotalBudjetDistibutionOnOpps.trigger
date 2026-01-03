@@ -1,9 +1,8 @@
-public class AccountHandler2 {
-//Total_New_Budjet__c
-    public static void budjetCalulation(List<Account> newList,Map<Id,Account> accountMap){
+//When Accounts total Budjet is Updated distribute it among all the Opportunities.
+trigger accountTotalBudjetDistibutionOnOpps on Account (After insert,After update) {
         Map<Id,Account> accMap = new Map<Id,Account>();
-        for(Account acc: newList){
-            if(Trigger.isUpdate && !accountMap.isEmpty() && acc.Total_New_Budjet__c != null && accountMap.get(acc.id).Total_New_Budjet__c != acc.Total_New_Budjet__c){
+        for(Account acc: Trigger.new){
+            if(Trigger.isUpdate && !Trigger.oldMap.isEmpty() && acc.Total_New_Budjet__c != null && Trigger.oldMap.get(acc.id).Total_New_Budjet__c != acc.Total_New_Budjet__c){
                 accMap.put(acc.id,acc);
             }
         }
@@ -28,8 +27,7 @@ public class AccountHandler2 {
             oppListUpdate.add(opp);
         }
         if(!oppListUpdate.isEmpty()){
-           // Update oppListUpdate;
+            Update oppListUpdate;
         }
             }
-    }
-}
+ }
