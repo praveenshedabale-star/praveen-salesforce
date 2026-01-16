@@ -215,4 +215,195 @@ trigger accountTotalBudjetDistibutionOnOpps on Account (After insert,After updat
             }
  }
 ===================================================================================
-Trigger 7:
+Trigger 7: Update Account description with phone numbers of contacts. 
+
+trigger ContactTrigger on Contact (
+    after insert,
+    after update,
+    after delete,
+    after undelete
+) {
+    Set<Id> accountIds = new Set<Id>();
+
+    // Collect Account Ids from new records
+    if (Trigger.isInsert || Trigger.isUpdate || Trigger.isUndelete) {
+        for (Contact con : Trigger.new) {
+            if (con.AccountId != null) {
+                accountIds.add(con.AccountId);
+            }
+        }
+    }
+
+    // Collect Account Ids from old records (for delete)
+    if (Trigger.isDelete) {
+        for (Contact con : Trigger.old) {
+            if (con.AccountId != null) {
+                accountIds.add(con.AccountId);
+            }
+        }
+    }
+
+    if (accountIds.isEmpty()) return;
+
+    // Map to store AccountId → List of phone numbers
+    Map<Id, List<String>> accPhoneMap = new Map<Id, List<String>>();
+
+    // Query all related contacts
+    for (Contact con : [
+        SELECT AccountId, Phone
+        FROM Contact
+        WHERE AccountId IN :accountIds
+        AND Phone != null
+    ]) {
+        if (!accPhoneMap.containsKey(con.AccountId)) {
+            accPhoneMap.put(con.AccountId, new List<String>());
+        }
+        accPhoneMap.get(con.AccountId).add(con.Phone);
+    }
+
+    // Prepare Accounts for update
+    List<Account> accountsToUpdate = new List<Account>();
+
+    for (Id accId : accPhoneMap.keySet()) {
+        Account acc = new Account();
+        acc.Id = accId;
+        acc.Description = String.join(accPhoneMap.get(accId), ', ');
+        accountsToUpdate.add(acc);
+    }
+
+    if (!accountsToUpdate.isEmpty()) {
+        update accountsToUpdate;
+    }
+}
+
+=========================================================================
+scenario 8 : 
+Count how many Contacts are related to each Account.
+----------------------------------------------------
+//call from Anonymous window : 
+Map<Id,Integer> maptt = ReturnAccountIdAndContactCount.returnAcountContactCount();
+system.debug('@@mapDetails'+maptt);
+
+public class ReturnAccountIdAndContactCount {
+
+    public static Map<Id,Integer> returnAcountContactCount(){
+        
+        // Step 1: Query Contacts with AccountId
+        List<Contact> contactList = [
+            SELECT Id, AccountId
+            FROM Contact
+            WHERE AccountId != null
+        ];
+        
+        // Step 2: Map to store AccountId → Contact Count
+        Map<Id, Integer> accountContactCountMap = new Map<Id, Integer>();
+        
+        // Step 3: Loop through contacts and count
+        for (Contact con : contactList) {
+            if (accountContactCountMap.containsKey(con.AccountId)) {
+                accountContactCountMap.put(
+                    con.AccountId,
+                    accountContactCountMap.get(con.AccountId) + 1
+                );
+            } else {
+                accountContactCountMap.put(con.AccountId, 1);
+            }
+        }
+        Return accountContactCountMap;
+      }
+}
+
+=====================================================
+Scenario 9:
+Do not allow Account creation if another Account already exists with the same Name.
+====================================================
+trigger PreventDuplicateAccount on Account (before insert) {
+
+    Set<String> accountNames = new Set<String>();
+
+    // Collect incoming Account names
+    for (Account acc : Trigger.new) {
+        if (acc.Name != null) {
+            accountNames.add(acc.Name);
+        }
+    }
+
+    // Query existing Accounts with same names
+    Map<String, Account> existingAccounts = new Map<String, Account>();
+    for (Account acc : [
+        SELECT Id, Name
+        FROM Account
+        WHERE Name IN :accountNames
+    ]) {
+        existingAccounts.put(acc.Name, acc);
+    }
+
+    // Prevent insert if duplicate found
+    for (Account acc : Trigger.new) {
+        if (acc.Name != null &&
+            existingAccounts.containsKey(acc.Name)) {
+
+            acc.addError(
+                'An Account with the same name already exists.'
+            );
+        }
+    }
+}
+
+===========================================================================
+//Write a Map based logic to relate Accounts with there contacts.
+
+Map<Id,List<Contact>> maptt = ReturnAccountIdAndContactCount.returnAcountContactCount();
+system.debug('@@mapDetails'+maptt);
+
+public class ReturnAccountIdAndContactCount {
+
+    public static Map<Id,List<Contact>> returnAcountContactCount(){
+        
+        // Step 1: Query Contacts with AccountId
+            List<Contact> contactList = [
+                SELECT Id, Name, AccountId
+                FROM Contact
+                WHERE AccountId != null
+            ];
+
+            // Step 2: Create Map<AccountId, List<Contact>>
+            Map<Id, List<Contact>> accountContactMap = new Map<Id, List<Contact>>();
+
+            // Step 3: Populate the Map
+            for (Contact con : contactList) {
+                if (!accountContactMap.containsKey(con.AccountId)) {
+                    accountContactMap.put(con.AccountId, new List<Contact>());
+                }
+                accountContactMap.get(con.AccountId).add(con);
+            }
+
+            // Step 4: Debug Map
+            System.debug(accountContactMap);
+
+        Return accountContactCountMap;
+      }
+}
+
+==========================================================================
+//Trigger - if an Account has at least one related contact prevent the Account from being deleted.
+trigger preventAccountDelete on Account(before delete){
+
+    Set<Id> accountIds = new Set<Id>();
+    for(Account acc : Trigger.old){
+        accountIds.add(acc.id);
+    }
+
+    Map<Id,Integer> accContactCountMap = new Map<Id,Integer>();
+
+    for(AggregateResult ar : [select AccountId accId, Count(Id) cnt from contact where 
+                              AccountId In : accountIds Group by Accountid]){
+     accContactCountMap.put((Id) ar.get('accId'),(Integer) ar.get('cnt'));           
+    }
+	system.debug('@@@'+accContactCountMap);
+    for(Account acc : Trigger.old){
+        if(!accContactCountMap.isEmpty() && accContactCountMap.containskey(acc.id)){
+            acc.addError('no deletion as there are contacts in this account');
+        }
+    }
+}
