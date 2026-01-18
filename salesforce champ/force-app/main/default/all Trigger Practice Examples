@@ -351,6 +351,7 @@ trigger PreventDuplicateAccount on Account (before insert) {
 }
 
 ===========================================================================
+//Scenarion - 10
 //Write a Map based logic to relate Accounts with there contacts.
 
 Map<Id,List<Contact>> maptt = ReturnAccountIdAndContactCount.returnAcountContactCount();
@@ -386,6 +387,7 @@ public class ReturnAccountIdAndContactCount {
 }
 
 ==========================================================================
+//Scenario - 11
 //Trigger - if an Account has at least one related contact prevent the Account from being deleted.
 trigger preventAccountDelete on Account(before delete){
 
@@ -405,5 +407,63 @@ trigger preventAccountDelete on Account(before delete){
         if(!accContactCountMap.isEmpty() && accContactCountMap.containskey(acc.id)){
             acc.addError('no deletion as there are contacts in this account');
         }
+    }
+}
+
+=============================================================================
+//Scenario - 12
+//Write an apex class to count the number of contacts per Account using map.
+
+trigger ContactCountTrigger on Contact (after insert, after delete, after undelete) {
+
+    Set<Id> accountIds = new Set<Id>();
+
+    // Collect AccountIds from new records
+    if (Trigger.isInsert || Trigger.isUndelete) {
+        for (Contact con : Trigger.new) {
+            if (con.AccountId != null) {
+                accountIds.add(con.AccountId);
+            }
+        }
+    }
+
+    // Collect AccountIds from deleted records
+    if (Trigger.isDelete) {
+        for (Contact con : Trigger.old) {
+            if (con.AccountId != null) {
+                accountIds.add(con.AccountId);
+            }
+        }
+    }
+
+    if (accountIds.isEmpty()) return;
+
+    // Count contacts per Account
+    Map<Id, Integer> accountContactCountMap = new Map<Id, Integer>();
+
+    for (AggregateResult ar : [
+        SELECT AccountId accId, COUNT(Id) total
+        FROM Contact
+        WHERE AccountId IN :accountIds
+        GROUP BY AccountId
+    ]) {
+        accountContactCountMap.put(
+            (Id) ar.get('accId'),
+            (Integer) ar.get('total')
+        );
+    }
+
+    // Update Accounts
+    List<Account> accountsToUpdate = new List<Account>();
+
+    for (Id accId : accountIds) {
+        Account acc = new Account();
+        acc.Id = accId;
+        acc.Total_Contact__c = accountContactCountMap.containsKey(accId)? accountContactCountMap.get(accId): 0;
+        accountsToUpdate.add(acc);
+    }
+
+    if (!accountsToUpdate.isEmpty()) {
+        update accountsToUpdate;
     }
 }
