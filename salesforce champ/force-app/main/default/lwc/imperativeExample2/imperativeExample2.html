@@ -1,0 +1,15 @@
+<template>
+    <lightning-catrd title = 'Imperative example' >
+        <div class = 'slds-m-around_medium'>
+            <lightning-button label = 'Fetch data' variant="Brand" onclick={fetchData}></lightning-button>
+            <template lwc:if={accounts}>
+                    <lightning-datatable 
+                    key-field = {id}
+                    data = {accounts}
+                    column = {column}
+                    >
+                    </lightning-datatable>
+            </template>
+        </div>
+    </lightning-catrd>
+</template>
