@@ -1,0 +1,20 @@
+.badge {
+    padding: 6px 12px;
+    border-radius: 12px;
+    color: white;
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.hot {
+    background-color: red;
+}
+
+.warm {
+    background-color: orange;
+}
+
+.cold {
+    background-color: blue;
+}

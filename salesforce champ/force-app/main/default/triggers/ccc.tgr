@@ -1,0 +1,1439 @@
+Opportunity
+stage field 
+profile- sales profile
+
+AND(stageName = 'In Progress',profile.Name <> Sales profile)
+
+Select Fields(all) from Opportunity
+
+
+select id,(select id from contacts) from account
+
+select id from account where id NOT IN (Select AccountId from Contact)
+
+Automation studio and Profile Api
+
+
+LWC Basics
+apex 
+Soql and sosl
+admin 
+=======================================================
+What is the basic structure of an LWC component?
+How do you create an LWC component in VS Code?
+What are the key files in an LWC component, and their purpose?
+What is the difference between @api, @track, and @wire?
+Can we use jQuery in LWC? If yes, how?
+What is the purpose of connectedCallback() in LWC?
+How does disconnectedCallback() work in LWC?
+What is the default scope of CSS in LWC?
+Can we use querySelector() in LWC? How?
+What is the difference between @track and regular properties?
+How do you create a getter method in LWC?
+Can we use console.log() for debugging in LWC?
+What are LWC components stored as in Salesforce?
+What is the importance of isExposed in an LWC XML configuration file?
+How do you handle conditional rendering in LWC?
+How do you iterate over a list in LWC using for:each?
+How can we bind CSS dynamically in LWC?
+What is lightning-record-edit-form and how does it work?
+What is lightning-record-view-form and how is it different?
+How do you validate form inputs in LWC?
+How do you call an Apex method with parameters from LWC?
+How do you invoke Apex imperatively in LWC?
+How do you catch errors when calling an Apex method in LWC?
+What is @wire used for in LWC?
+What are the advantages of using @wire over imperative Apex calls?
+How do you use @wire with dynamic parameters?
+How do you use a Promise to handle async operations in LWC?
+How do you call a Platform Event from LWC?
+How do you communicate between two LWC components using pubsub.js?
+How do you pass an object from parent to child in LWC?
+How do you create a two-way data binding in LWC?
+How can you store data in the browser for an LWC component?
+What are the common governor limits to consider when using Apex in LWC?
+How do you handle errors in LWC using try-catch?
+What is lightning-datatable, and how do you use it?
+What is NavigationMixin in LWC, and how do you use it?
+How do you open a record in a new tab using NavigationMixin?
+How do you navigate to a Visualforce page from LWC?
+How can you perform deep cloning of objects in LWC?
+What is Lightning Data Service (LDS), and how is it used in LWC?
+How do you optimize performance when fetching large records in LWC?
+What is debouncing, and how can you implement it in LWC?
+What is throttling, and how is it different from debouncing?
+How do you implement pagination in LWC without using a third-party library?
+How do you handle file uploads in LWC and save them to Salesforce?
+How do you display files stored in Salesforce inside an LWC component?
+How do you handle multi-select picklist fields in LWC?
+What are LWC services, and how are they useful?
+How do you use LWC in Experience Cloud?
+What are Dynamic Interactions in LWC?
+How do you use SLDS classes inside LWC?
+What are synthetic events in LWC?
+What are Real DOM and Virtual DOM, and how do they impact LWC performance?
+Can you create custom events in LWC? How?
+How do you handle click events in LWC using addEventListener()?
+How would you build a custom search component in LWC?
+How would you build a dynamic picklist component that fetches values from Apex?
+How do you prevent duplicate API calls when typing in an LWC search box?
+How would you build a collapsible section component in LWC?
+How do you design an LWC component for handling dynamic form submissions?
+How do you build a global notification banner in LWC?
+How do you restrict an LWC component to a specific profile?
+What is the best way to store large datasets in LWC to avoid performance issues?
+How do you implement an auto-save feature in LWC?
+How do you implement lazy loading of components in LWC?
+How do you handle infinite scrolling in LWC?
+How would you implement a custom lookup component in LWC?
+How do you prevent multiple clicks on a button in LWC?
+How do you prevent LWC from executing a function multiple times?
+How would you create a progress bar in LWC?
+How do you dynamically show/hide components in LWC?
+How would you implement dark mode in LWC?
+How do you add tooltips in LWC?
+How do you log errors in an external logging system from LWC?
+How do you ensure accessibility (a11y) in LWC?
+What is Lightning Web Security (LWS) in Salesforce?
+How is LWS different from Locker Service?
+How do you enable/disable LWS for an org?
+What are cross-namespace restrictions in LWS?
+How do you debug LWS errors in LWC?
+What are the best practices to follow when using third-party JS libraries in LWC?
+What is Jest, and how is it used for testing LWC?
+How do you write a basic Jest test for an LWC component?
+What are mocks in Jest testing, and how do you use them?
+How do you test an LWC component that makes an Apex call?
+How do you test event handling in LWC using Jest?
+How do you test an LWC component inside a Lightning Page?
+What is the best way to test navigation in LWC?
+How do you use LWC Test Utils in Salesforce?
+How do you test LWC components that rely on external APIs?
+What are snapshot tests, and how can they help in LWC?
+How do you test a lightning-datatable component?
+How do you check component rendering inside Jest tests?
+How do you test an LWC component that uses @wire?
+How do you test an LWC component that listens for a custom event?
+What are best practices for writing Jest tests in LWC?
+How do you mock Apex calls in Jest tests?
+What are code coverage requirements in Salesforce for LWC?
+How do you run Jest tests in VS Code?
+How do you integrate LWC Jest tests with CI/CD pipelines?
+What is LWC, and how is it different from Aura Components?
+What are the key advantages of using LWC over Aura?
+What are the different ways to communicate between LWC components?
+What are the lifecycle hooks in LWC? Explain each with an example.
+What are decorators in LWC, and how do they work? (@api, @track, @wire)
+How do you call an Apex method from LWC?
+What are the different types of data binding in LWC?
+Explain how security works in LWC (CSP, Locker Service, etc.).
+How do you handle events in LWC? Explain with CustomEvent.
+What is Shadow DOM in LWC, and how does it affect styling?
+How do you pass data from parent to child components in LWC?
+How do you pass data from child to parent components?
+What is a Promise in JavaScript, and how is it used in LWC?
+How do you handle asynchronous Apex calls in LWC (async/await vs. then/catch)?
+What is the difference between @track and reactive properties in LWC?
+How do you handle navigation in LWC (NavigationMixin)?
+Explain the refreshApex function and how to use it effectively.
+How do you import and use static resources in LWC?
+How do you load external JavaScript libraries in LWC?
+What is a wire adapter, and how is it used in LWC?
+How do you integrate LWC with third-party APIs using Fetch?
+How do you debug LWC performance issues?
+How do you test LWC components using Jest?
+What is Lightning Message Service (LMS), and how does it work?
+What is Dynamic Interactions in LWC? How do you use them?
+Explain how LWC works with Dynamic Forms and Dynamic Actions.
+How do you implement a search component with debouncing in LWC?
+What is the role of Lightning Data Service (LDS) in LWC?
+How do you optimize large data sets in LWC (pagination, lazy loading, etc.)?
+How do you handle governor limits when working with Apex in LWC?
+Explain a real-time use case where you used LWC in a project.
+How did you handle complex parent-child component communication in your project?
+What challenges did you face while working with LWC, and how did you solve them?
+Describe an LWC customization you implemented for a client.
+How would you implement a dynamic table in LWC with inline editing?
+How would you design an LWC that interacts with a Salesforce Flow?
+How can you build a custom modal component in LWC?
+How would you implement file uploads in LWC using Apex?
+How do you integrate LWC with REST APIs?
+How do you handle record updates in real-time without refreshing the page?
+What is the full form of LWC?
+How do you enable LWC development in Salesforce?
+Can we create an LWC component without JavaScript?
+What is the importance of lwc.config.json?
+What are the different ways to create an LWC component?
+What are the different types of templates in LWC?
+What are Lightning Web Security (LWS) restrictions in LWC?
+How does Locker Service affect LWC?
+What are the different LWC file extensions?
+Can LWC be used in Visualforce pages?
+What are slot elements in LWC?
+How do you use multiple slot elements in LWC?
+What are template directives in LWC?
+How do you use if:true and if:false in LWC?
+What is lightning-record-edit-form?
+How does lightning-input work?
+What are event bubbling and event capturing in LWC?
+What is data-id used for in LWC?
+Can we use standard DOM methods like getElementById in LWC?
+What is the difference between data-id and id in LWC?
+How do you make a component reusable in LWC?
+Can we dynamically change the template in LWC?
+How do you change a property dynamically in LWC?
+What are getter methods in LWC?
+What is @api used for in LWC?
+What is @track, and when should you use it?
+How do you use the static keyword in LWC classes?
+Can we use setTimeout and setInterval in LWC?
+How do you create a read-only field in LWC?
+What are the different ways to handle user input in LWC?
+Can LWC interact with Aura components?
+How do you bind CSS classes dynamically in LWC?
+What is lightning-card, and how does it work?
+How do you handle user authentication in LWC?
+How do you create a responsive LWC component?
+Can we use third-party CSS frameworks like Bootstrap in LWC?
+How does tabindex work in LWC?
+What are aria-* attributes, and why are they used in LWC?
+What is lightning-spinner, and how do you use it?
+How do you customize error messages in LWC?
+What is lightning-toast, and how do you display notifications?
+Can LWC components be used in Salesforce Mobile App?
+How do you access URL parameters in LWC?
+How do you define a constant variable in LWC?
+How do you prevent duplicate submissions in an LWC form?
+How can you convert an LWC component into a Quick Action?
+What is lightning-modal, and how do you use it?
+How do you add an LWC component to a Lightning Page?
+What is lightning-flow, and how can you use it in LWC?
+How do you apply conditional styling in LWC?
+What is two-way data binding in LWC?
+How do you pass complex objects to an LWC component?
+How do you use event.preventDefault() in LWC?
+What is this.template.querySelector() used for?
+How do you disable a button conditionally in LWC?
+How do you handle keyboard events in LWC?
+What is dataset in LWC?
+How do you listen for window resize events in LWC?
+How can you limit user input length in an LWC form?
+What is debouncing, and how do you use it in LWC?
+How do you implement a toggle switch in LWC?
+How do you display dynamic images in LWC?
+What are Synthetic Events in LWC?
+How do you integrate Google Maps into LWC?
+How do you create a multiselect dropdown in LWC?
+What is client-side validation in LWC?
+How do you create a collapsible section in LWC?
+How do you store user preferences in LWC?
+What is the difference between target.value and currentTarget.value?
+How do you handle custom events in LWC?
+How do you update an array of records in LWC?
+What is requestAnimationFrame() in LWC?
+How do you handle API rate limits in LWC?
+What is Lazy Loading, and how can you implement it in LWC?
+How do you handle multiple file uploads in LWC?
+What is a MutationObserver, and how can it be used in LWC?
+How do you manage global state in LWC?
+What are WebSockets, and can you use them in LWC?
+How do you handle large data sets efficiently in LWC?
+How do you implement pagination in LWC?
+How do you handle concurrent record updates in LWC?
+How do you implement role-based access control in LWC?
+How do you use LWC in Experience Cloud?
+How do you prevent XSS attacks in LWC?
+What are browser storage mechanisms, and how can they be used in LWC?
+What is Shadow DOM encapsulation, and how does it work in LWC?
+How can you build a Custom Lookup Component in LWC?
+How do you integrate LWC with Salesforce Flow?
+What is Service Worker, and can it be used in LWC?
+How do you migrate an Aura component to LWC?
+What are best practices for performance tuning in LWC?
+How do you create an LWC that supports multiple languages?
+What is Code Splitting, and why is it important in LWC?
+How do you test LWC components using Jest?
+How do you handle real-time updates in LWC?
+How can you build a Dark Mode toggle in LWC?
+How do you integrate LWC with REST APIs?
+How do you implement infinite scrolling in LWC?
+What is Lightning Message Service (LMS)?
+How do you handle Session Timeout in LWC?
+How do you enable offline capabilities in LWC?
+How do you build an autocomplete search in LWC?
+How do you create a draggable list in LWC?
+How do you handle bulk actions in LWC?
+How do you integrate Google ReCAPTCHA in LWC?
+What is polling, and how can it be used in LWC?
+How do you perform batch processing in LWC?
+How do you throttle user input in LWC?
+How do you validate date fields in LWC?
+How do you create a dynamic table in LWC?
+How do you build a custom toast notification in LWC?
+How do you use try...catch blocks in LWC?
+What is JSON.stringify() used for in LWC?
+How do you log errors in LWC?
+How do you handle race conditions in LWC?
+How can you use indexedDB in LWC?
+How do you create custom progress bars in LWC?
+How do you manage component state in LWC?
+How do you ensure cross-browser compatibility in LWC?
+How do you create a confirmation modal in LWC?
+What is window.postMessage() used for in LWC?
+How do you create user session storage in LWC?
+How do you create an export to CSV feature in LWC?
+How do you create a search bar with filters in LWC?
+What are race conditions, and how do you handle them?
+How do you implement OAuth authentication in LWC?
+How do you generate random unique IDs in LWC?
+What is the difference between JSON and JavaScript objects?
+How do you use setTimeout() effectively in LWC?
+What is destructuring, and how is it used in LWC?
+What is the difference between map, filter, and reduce in LWC?
+How do you create an accordion component in LWC?
+What are named slots, and how do they work in LWC?
+How do you manage component reactivity in LWC?
+How do you generate random colors dynamically in LWC?
+How do you create a dynamic chart in LWC using Chart.js?
+How do you implement Google Analytics tracking in LWC?
+How do you handle browser back button events in LWC?
+How do you manage long-running operations in LWC?
+What is the difference between synchronous and asynchronous JavaScript?
+How do you implement user activity tracking in LWC?
+How do you dynamically add/remove form fields in LWC?
+How do you create a stepper component in LWC?
+What are best practices for debugging LWC code?
+How do you implement a notification bell with unread messages in LWC?
+How do you create a shopping cart experience in LWC?
+What are the key differences between Lightning Aura and LWC?
+How do you ensure smooth animations in LWC?
+How do you optimize nested loops in LWC?
+What is the difference between @api, @track, and @wire?
+What is data binding, and how does it work in LWC?
+How do you create custom badges in LWC?
+How do you use mutation observers in LWC?
+How do you refresh component data without reloading the page?
+How do you handle image lazy loading in LWC?
+How do you handle multi-step forms in LWC?
+How do you dynamically switch components in LWC?
+What is event delegation, and how can it be used in LWC?
+How do you detect offline/online status in LWC?
+How do you ensure cross-component communication in LWC?
+How do you create a custom tooltip component in LWC?
+What are global event listeners, and when should they be used?
+How do you handle browser notifications in LWC?
+What is Intl.NumberFormat(), and how can it be used?
+What are best practices for API integration in LWC?
+How do you create a custom tab navigation system in LWC?
+How do you track component render time in LWC?
+How do you build a barcode scanner in LWC?
+How do you create a customizable theme system in LWC?
+How do you implement push notifications in LWC?
+How do you create a custom file preview component in LWC?
+How do you manage scroll events efficiently in LWC?
+How do you create a clickable map with markers in LWC?
+How do you implement session timeouts and auto-logout in LWC?
+How do you create a side panel navigation system in LWC?
+How do you implement dark mode in LWC?
+How do you use IndexedDB for offline storage in LWC?
+What are static resources, and how are they used in LWC?
+How do you implement SSO authentication in LWC?
+How do you encrypt and decrypt data in LWC?
+How do you handle multiple API calls efficiently in LWC?
+How do you integrate LWC with external CRMs?
+How do you optimize LWC for low-bandwidth networks?
+What are web workers, and can they be used in LWC?
+How do you create a drag-and-drop file upload in LWC?
+What are headless Lightning Web Components?
+How do you create a split-screen layout in LWC?
+What are server-side rendering techniques in LWC?
+How do you create an offline-first LWC app?
+How do you prevent memory leaks in LWC?
+How do you create a custom reporting dashboard in LWC?
+How do you integrate Power BI with LWC?
+What is Lazy Component Loading, and how is it done in LWC?
+How do you implement AI/ML-based predictions in LWC?
+How do you create a custom Kanban board in LWC?
+How do you build an AI chatbot using LWC?
+How do you create a time tracker application in LWC?
+How do you handle form validation with complex rules in LWC?
+How do you create a multi-tenant LWC app?
+How do you use WebAssembly in LWC?
+How do you implement cross-site request forgery protection in LWC?
+How do you create interactive charts in LWC?
+How do you optimize an LWC app for high performance?
+What is Lazy Hydration, and how does it work in LWC?
+How do you implement voice recognition in LWC?
+How do you create dynamic forms with conditional fields?
+How do you track real-time GPS location in LWC?
+How do you automatically refresh data in LWC?
+How do you implement Google Drive integration in LWC?
+How do you create a custom heatmap visualization in LWC?
+How do you build custom Lightning Reports in LWC?
+How do you handle real-time collaboration features in LWC?
+How do you implement data caching in LWC?
+How do you create a custom calendar component in LWC?
+How do you build a custom QR code scanner in LWC?
+How do you track user activity logs in Salesforce using LWC?
+How do you implement infinite scrolling in LWC?
+How do you dynamically change CSS styles based on user actions?
+How do you handle session timeouts in LWC?
+How do you manage component lifecycle effectively in LWC?
+How do you handle Excel file upload and parsing in LWC?
+How do you create a guided tour or walkthrough in LWC?
+How do you use chart libraries like D3.js in LWC?
+How do you implement speech-to-text in LWC?
+How do you build a custom event-driven workflow in LWC?
+How do you use cookies and localStorage in LWC?
+How do you handle component unmounting gracefully?
+How do you build interactive decision trees in LWC?
+How do you create real-time search filtering in LWC?
+What is debouncing and throttling, and when should you use them in LWC?
+How do you integrate Google Maps API in LWC?
+How do you implement auto-save functionality in LWC forms?
+How do you perform ETL (Extract, Transform, Load) processes using LWC?
+How do you create a custom accessibility-friendly component in LWC?
+How do you dynamically adjust table columns based on screen size?
+How do you implement audit logging in Salesforce using LWC?
+How do you create color themes in LWC?
+How do you handle concurrent API requests efficiently in LWC?
+How do you build a dynamic form that adjusts based on user input?
+How do you implement progressive web app (PWA) features in LWC?
+How do you create responsive data grids in LWC?
+How do you handle bulk API calls in LWC?
+How do you create a single sign-on (SSO) authentication flow in LWC?
+How do you handle pagination for large datasets in LWC?
+How do you implement scroll-based animations in LWC?
+How do you create an image gallery with zoom-in effects in LWC?
+How do you optimize network requests in LWC?
+How do you handle API rate limits efficiently in LWC?
+How do you implement a dynamic dashboard in LWC?
+How do you ensure security best practices in LWC?
+How do you create a multi-tab component in LWC?
+How do you add Google reCAPTCHA in LWC?
+How do you create a dynamic user permissions system in LWC?
+How do you implement auto-complete functionality in LWC?
+How do you create real-time charts using WebSockets in LWC?
+How do you manage nested Lightning Web Components effectively?
+How do you build an AI-powered recommendation system in LWC?
+How do you implement real-time error logging in LWC?
+How do you create a custom AI chatbot in LWC?
+How do you implement multi-language support in LWC?
+How do you handle push notifications in LWC?
+How do you integrate an AI/ML model into LWC?
+How do you build an AI-powered document scanner in LWC?
+How do you implement real-time event listeners in LWC?
+How do you integrate Salesforce Einstein Analytics with LWC?
+How do you create custom animations using GSAP in LWC?
+How do you use WebRTC for video calls in LWC?
+How do you build an interactive heatmap visualization in LWC?
+How do you integrate Salesforce with IoT devices using LWC?
+How do you create a real-time chat application in LWC?
+How do you optimize performance for large LWC applications?
+How do you create custom voice commands in LWC?
+How do you build a gesture-based UI in LWC?
+How do you implement real-time stock market updates in LWC?
+How do you create an AI-powered voice assistant in LWC?
+How do you implement blockchain-based smart contracts in LWC?
+What are the main differences between LWC and Aura Components?
+How do you enable Locker Service in LWC?
+What is Shadow DOM, and how does it work in LWC?
+How does Event Bubbling and Event Capturing work in LWC?
+What is Synthetic Shadow in LWC?
+How do you pass parameters in @wire methods?
+What are LWC Templates, and how do they work?
+How do you implement Lazy Loading in LWC?
+How do you handle Event Propagation in LWC?
+What is the difference between Light DOM and Shadow DOM?
+What are Track Properties (@track) in LWC?
+How do you bind CSS dynamically in LWC?
+How do you apply conditional styling in LWC?
+How do you use computed properties in LWC?
+What is Reactive Context in LWC?
+How do you create a singleton service in LWC?
+How do you set default values for Lightning Input fields?
+What is Reactive Rendering in LWC?
+What is the best practice for handling large data in LWC?
+How do you dynamically create components in LWC?
+What is the use of a render() function in LWC?
+What is CSS Scoping in LWC?
+How do you implement debouncing in LWC?
+What is MutationObserver, and how does it work in LWC?
+How do you use setTimeout and setInterval in LWC?
+What is Shadow Root Mode in LWC?
+How do you handle out-of-box Lightning CSS Framework?
+How do you implement lightweight animations in LWC?
+How do you optimize reactivity performance in LWC?
+What are the differences between Wire and Imperative Apex Calls?
+How do you pass data between parent and child LWC components?
+How do you handle multiple child components in LWC?
+How do you refresh Lightning Data Service (LDS)?
+What is Lightning Message Service (LMS), and when should you use it?
+How do you use @api decorator for exposing properties in LWC?
+How do you create a global event bus in LWC?
+How do you prevent default event behavior in LWC?
+How do you use dispatchEvent in LWC?
+How do you pass complex JSON data between components?
+How do you handle bi-directional data binding in LWC?
+What is the difference between bubbling and composed events?
+How do you use async/await inside an LWC component?
+How do you handle error messages in LWC gracefully?
+How do you implement loading spinners in LWC?
+How do you store session data in LWC?
+What is the best practice for handling component state?
+How do you prevent race conditions in LWC?
+How do you implement polling mechanisms in LWC?
+What is the purpose of Lightning Record Edit Form?
+How do you retrieve a user’s time zone dynamically in LWC?
+What are Locker Service restrictions in LWC?
+How do you prevent Cross-Site Scripting (XSS) attacks in LWC?
+How do you use Content Security Policy (CSP) in LWC?
+What are security best practices when handling Apex calls in LWC?
+What are Governor Limits applicable to LWC?
+How do you optimize JavaScript execution in LWC?
+What is Lazy Loading of Components?
+How do you reduce memory leaks in LWC?
+What is the best way to handle large datasets in LWC?
+What are bundled resources in LWC?
+How do you improve rendering performance in LWC?
+What is server-side pagination, and how is it implemented in LWC?
+How do you monitor network requests in LWC?
+How do you enable batch processing in LWC?
+How do you profile CPU and memory usage for LWC components?
+What are critical performance bottlenecks in LWC?
+How do you improve API response times in LWC?
+How do you use Cache API in LWC?
+What are the key security vulnerabilities in LWC?
+How do you prevent session hijacking in LWC?
+How do you call Apex methods in LWC using Imperative Apex?
+What are the benefits of using @AuraEnabled(cacheable=true)?
+How do you handle bulk API requests from LWC?
+How do you integrate LWC with Asynchronous Apex methods?
+How do you handle multiple API calls in LWC?
+How do you invoke Platform Events from LWC?
+How do you execute batch jobs from LWC?
+How do you handle pagination in LWC using Apex?
+How do you use Apex continuations with LWC?
+How do you track long-running Apex jobs in LWC?
+How do you display DML errors in LWC using Apex?
+How do you retry failed API calls in LWC?
+How do you handle file uploads from LWC to Apex?
+How do you bind Apex objects to LWC?
+How do you use Apex-defined Custom Types in LWC?
+How do you pass complex objects between LWC and Apex?
+What is the best way to debug LWC + Apex interactions?
+How do you track record changes dynamically in LWC?
+What are best practices for handling SOQL in LWC Apex?
+How do you avoid SOQL Injection in LWC?
+How do you implement real-time dashboards in LWC?
+How do you build a role-based access system in LWC?
+How do you create multi-language support in LWC?
+How do you integrate Salesforce LWC with AWS Lambda?
+How do you create progress bars in LWC?
+How do you handle live data streaming in LWC?
+How do you build drag-and-drop functionality in LWC?
+How do you implement a custom date picker in LWC?
+How do you create a reusable modal component in LWC?
+How do you integrate Google Calendar with LWC?
+How do you create a barcode scanner in LWC?
+How do you implement user authentication in LWC?
+How do you integrate Stripe payments in LWC?
+How do you create a chatbot in LWC?
+How do you handle voice recognition in LWC?
+How do you create interactive maps in LWC?
+How do you optimize LWC for mobile devices?
+How do you create AI-powered suggestions in LWC?
+How do you manage nested components efficiently in LWC?
+How do you create editable data tables in LWC?
+
+
+
+praveenshedabale3772@agentforce.com
+
+
+1.What is LWC?
+2. Why was LWC introduced?
+3. Difference between LWC and Aura?
+                                        
+        4. What are Decorators in LWC?
+
+5. What is @api in LWC?
+6. What is @track in LWC?
+7. What is @wire in LWC?
+8. Example of @wire with Apex?
+9. What is the difference between @wire and imperative Apex calls?
+
+10. Example of Imperative Apex call?
+
+
+
+
+
+
+//Write a code to populate contact phone number, ion comma separated manner in its parent account description feild.
+
+
+Trigger ContactTrigger on Contact(After insert, After Update){
+
+	if(Trigger.isAfter){
+		if(Trigger.isInsert || Trigger.IsUpdate){
+				for(Contact con : Trigger.new){
+				 		Map<Id,Contact> conMap = new Map<Id,Contact>();
+						if(Trigger.isInsert || (Trigger.isUpdate && (Trigger.oldMap.get(con.id).Phone != con.phone))){
+						       conMap.put(con.AccountID,con);
+						}
+				}
+				if(!conMap.isEmpty()){
+				   List<Account> accUpdateList = new List<Account>();
+				   List<Account> accList = [select id,Description from Account where Id in : conMap.keySet()];
+				   if(!accLis.isEmpty()){
+				      for(Account acc : accList){
+				      	   if(acc.Description == null){
+				      	   		acc.description = conMap.get(acc.id).Phone;
+				      	   }
+				      	   else{
+				      	   		acc.description = acc.description + ',' + conMap.get(acc.id).Phone;
+				      	   }
+				      	   accUpdateList.add(acc);
+				      }
+				   }
+				   if(!accList.isEmpty()){
+				       Update accList;
+				   }
+ 				}
+		}
+	}
+
+}
+
+
+//Write an apex class to count the number of contacts per Account using map.
+
+trigger ContactCountTrigger on Contact (after insert, after delete, after undelete) {
+
+    Set<Id> accountIds = new Set<Id>();
+
+    // Collect AccountIds from new records
+    if (Trigger.isInsert || Trigger.isUndelete) {
+        for (Contact con : Trigger.new) {
+            if (con.AccountId != null) {
+                accountIds.add(con.AccountId);
+            }
+        }
+    }
+
+    // Collect AccountIds from deleted records
+    if (Trigger.isDelete) {
+        for (Contact con : Trigger.old) {
+            if (con.AccountId != null) {
+                accountIds.add(con.AccountId);
+            }
+        }
+    }
+
+    if (accountIds.isEmpty()) return;
+
+    // Count contacts per Account
+    Map<Id, Integer> accountContactCountMap = new Map<Id, Integer>();
+
+    for (AggregateResult ar : [
+        SELECT AccountId accId, COUNT(Id) total
+        FROM Contact
+        WHERE AccountId IN :accountIds
+        GROUP BY AccountId
+    ]) {
+        accountContactCountMap.put(
+            (Id) ar.get('accId'),
+            (Integer) ar.get('total')
+        );
+    }
+
+    // Update Accounts
+    List<Account> accountsToUpdate = new List<Account>();
+
+    for (Id accId : accountIds) {
+        Account acc = new Account();
+        acc.Id = accId;
+        acc.Total_Contact__c = accountContactCountMap.containsKey(accId)? accountContactCountMap.get(accId): 0;
+        accountsToUpdate.add(acc);
+    }
+
+    if (!accountsToUpdate.isEmpty()) {
+        update accountsToUpdate;
+    }
+}
+
+//when account Phone updated is updated then update all the contact phones.
+
+Trigger AccountHandler on Account(After insert, After delete){
+
+    if(Trigge.isAfter){
+    	If(Trigger.isInsert || Trigger.isUpdate){
+    	Map<Id,Account> accMap = new Map<Id,Account>();
+    		for(Account acc : Trigger.new){
+    			if(acc.phone != null && (Trigger.isInsert || (Trigger.isUpdate && Trigger.oldMap.get(acc.id).phone != acc.phone)) ){
+    				accMap.put(acc.id,acc);
+    			}
+    		}
+    		
+    		if(!accMap.isEmpty()){
+    		List<Account> updateAccList = new List<Account>();
+    		 List<Contact> accList = [select id,Phone from Contact where AccountId in : accMap.Keyset()];
+    		 if(!accList.isEmpty()){
+    		 	for(Contact con : conList){
+    		 	   acc.Phone = accMap.get(acc.id).Phone;
+    		 	   updateAccList.add(acc);
+    		 	}
+    		 }
+    		 if(!updateAccList.isEmpty()){
+    		 	Update updateAccList;
+    		 }
+    		}
+    	}
+    }
+
+}
+
+
+//Write any apex class
+
+public class WriteAnyApex{
+ 
+ public static List<Account> returnAccountRecords(Id accId){
+ 	List<Account> accList = [select id,Name,Phone,Description from Account where id = : accId];
+ 	if(!accList.isEmpty()){
+ 		return accList;
+ 	}
+ 
+ } 
+
+}
+
+//One way binding
+<template>
+	<lightning-card title = 'One way binding'>
+		<div class= "slds-m-arounf_medium">
+			<p>Hi {username} how ARE YOU</p>
+		</div>
+	</lightning-card>
+</template>
+
+import {lightningElement} from 'lwc';
+export default class OneWayBindingExample extends LightningElement{
+        username = 'Praveen';
+        isActive = false;
+}
+
+//Two way binding
+<template>
+	<lightning-card title = 'two way binding'>
+	<div  class = 'slds-m-around_medium>
+	<lightning-input label = 'enter your name' value = {name} onchange = {handleChange}></lightning-input>
+	<p class=''slds-m-around_medium>Hello, {name}</p>
+	</div>
+	</lightning-card>
+</template>
+
+import {lightningElement} from 'lwc';
+export default class TwoWayBinding extends LightningElement{
+	name;
+	handleChange(event){
+	this.name = event.target.value;
+	}
+}
+
+//get data on lightning data - table.
+
+import  {LightningElement,track} from 'lwc';
+import getFiveAccounts form '@salesforce/apex/AccountController.getFiveAccounts';
+export default class fetchDataFromAccount extends LightningElement{
+	@track accounts = [];
+	
+	columns = [
+		{label : 'AccountName',fieldName : 'Name'},
+		{label : 'Annual Revenue',fieldName : AnnualRevenue, type : 'Currency'}
+	];
+	
+	handleClick(){
+		getFiveAccounts()
+		.then(result => {
+				this.Accounts = result;
+		})
+		.catch(error =>{
+				console.log('Error fetching accounts',error);
+		})
+	}
+}
+
+<template>
+	<lightning-card title = ''Accounts data table'>
+		<div class='slds-m-around_medium'>
+			<lightning-button
+				label="fetch Accounts"
+				variant = "brand"
+				onClick={handleClick}>
+			</lightning-button>
+			
+			<template lwc : if = {accounts}>
+			 <lightning-datatable
+			 key-field = "Id"
+			 data = {accounts}
+			 columns = {columns}
+			 
+			 class = 'slds-m top_medium'>
+			 </lightning-datatable>	
+		</div>
+	</lightning-card>
+</template>
+
+-------------------------------------
+//When parent field Email is updated update child fields.
+
+Trigger AccountTrigger on Account(After insert, After Update){
+	if(Trigger.isAfter){
+		if(Trigger.isInsert || Trigger.isUpdate){
+			AccountHandler.updateContacts(Trigger.new,Trigger.OldMap);
+		}
+	}
+}
+
+public class AccountHandler{
+	Public static void updateContacts(List<Account> accNewList, Map<Id,Account> accMap){
+	 Map<Id,Account> accountMap = new Map<Id,Account>();
+	 for(Account acc : accNewList){
+	 	if(Trigger.isInsert || (Trigger.isUpdate &&b accMap.get(acc.id).Email) != acc.Email){
+	 		accountMap.put(acc.id,acc);
+	 	}
+	 }
+	 if(accountMap.isEmpty) return;
+	 List<Contact> conList = new List<Contact>();
+	  for(Contact con : [select id,Phone from Account where id in : accountMap.keyset()]){
+	  	con.phone = accountMap.get(con.AccountId).phone;
+	  	conList.add(con);
+	  }
+	  if(!conList.isEmpty){
+	  	Update conList;
+	  }
+	}
+}
+
+//When Child field Updated update the Parent field
+Trigger ContactTrigger on Contact(After insert, After update){
+	if(Trigger.isAfter){
+		if(Trigger.isinsert || Trigger.isUpdate){
+			contactTriggerHandler.contactUpdate(Trigger.new,Trigger.oldMap);	
+		}
+	}
+}
+
+Public class contactTriggerHandler{
+
+	public static void contactUpdate(List<Contact> conList,Map<id,Contact> conOldMap){
+			Map<Id,Contact> conAccIdMap = new Map<Id,Contact>();
+			for(Contact con : conList){
+				if(con.AccountId != null && con.Rating__c != null && Trigger.isInsert || (Trigger.isUpdate && conOldMap.get(con.id).Rating__c != con.Rating__c)){
+						conAccIdMap.put(con.AccountId, con);
+				}
+			}
+			
+			if(conAccIdMap.isEmpty()) return;
+			List<Account> accUpdateList = new List<Account>();
+			for(Account acc : [select id,Accountid, Rating__c from Account where id in : conAccMap.keySet()]){
+			 	acc.Rating__c = conAccIdMap.get(acc.id).Rating__c;
+			 	accUpdateList.add(acc);
+			}
+			
+			if(!accUpdateList.isEmpty()){
+				Update accUpdateList;
+			}
+	}
+
+}
+
+
+
+
+
+//html
+<template>
+	<lightning-card title = 'fetch data from account'>
+		<div class= 'slds-m-around_medium'>
+			<lightnig-button label='fetch Data' variant = 'brand' onClick={fetchData}>
+			</lightning-button>	
+			<template lwc : if={accounts}>
+				<lightning-datatable 
+				key-field= {Id}
+				Data = {Accounts}
+				columns = {columns}>
+				</lightning-datatable>
+			</template>
+		</div>
+	</lightning-card>
+</template>
+
+//js
+import {lightningElement} from 'lwc';
+import fetchAccountData from '@salesforce/apex/accountHandler.fetchAccount';
+export default class FetchAccountData extends LightningElement{
+     @track Accounts = [];
+     
+     columns = [
+     	{label : 'Account Name',FieldName : 'Name'},
+     	{label : 'Account Revenue',FieldName : 'Revenue'}
+     ];
+     
+     fetchData(){
+     	fetchAccountData()
+     	.then(result => {
+     			this.Accounts = result;
+     	})
+     	.catch(error = {
+     	   console.log('there is some error' +error);
+     	})
+     }
+
+}
+
+apex class
+@auraenabled
+public class accountHandler{
+	public static List<Account> accList fetchAccount(){
+			List<Account> accList = [select id,AccountRevenue,Name from Account limit 5];
+			if(!accList.isEmpty()){
+				return accList;
+			}
+	}
+}
+
+//one way binding --
+
+<template>
+	<lightning-card title = 'One way and two way binding'>
+		<div class = 'slds-m-around_medium'>
+			<p>one way binded data is {username}</p>
+			<lightning-input label = ''Enter number value = {number} onchange = {callOnChange}></lightning-input>
+			<p>two way binded data on click {number}</p>
+		</div>
+	</lightning-card>
+</template>
+
+//js
+
+import {LightningElement} from 'lwc';
+export default class OneAndTwoWayBinding Extends LightningElement{
+	username = 'praveen';
+	number;
+	
+	callOnChange(event){
+		this.number = event.target.value;
+	}
+	
+}
+
+
+
+@wire(getAccounts)
+wiredAccounts({data,error}){
+	if(data){
+		this.accounts = data;
+		this.error = undefined;
+	}else if(error){
+		this.accounts = undefined;
+		this.error = error;
+	}
+}
+
+==========================================================================
+//write lwc wire and imperative examples;
+
+//wire
+
+<template>
+	<lightning-datatable title = 'fetch Accounts using wire'>
+		<div class = 'slds-m-around_medium'>
+			<template lwc : if = {accounts}>
+				<lightning-datatable 
+				key-field = {Id}
+				data = {accounts}
+				column = {column}
+				>
+				</lightning-datatable>
+			<template>
+			<template lwc : else if = {error}>
+				<p>there is some error while fetching data : {error}</p>
+			</template>
+		</div>
+	</lightning-datatable>
+</template>
+
+import {lightningElemnt} from 'lwc';
+import getAccountData  from '@salesforce/apex/AcccountTriggerHandler.getAccountRecords';
+export default class wireCall Extends LightningElement{
+      accounts = [];
+      error;
+      coulumns = [
+      {label : 'Account Revenue', fieldName : 'AccountRevenue'},
+      {label : 'Account Name', FieldName : 'Name'}
+      ];
+      
+      @wire(getAccountData)
+      getAccounts({data,error}){
+      	if(data){
+      		this.accounts = data;
+      		thi.error =  undefined;
+      	} else if(error){
+      	  this.error = error;
+      	  this.accounts = undefined;
+      	}
+      }
+}
+
+
+<Lightning-input label = 'enter number' value = 'number' onchange = {callChange}></lightning-input>
+<lightning-button label = 'on Click' variant = 'Brand' onClick = {callFunction}></Lightning-button>
+
+
+//on contact insert update the contact count in account field.
+
+Trigger contactTrigger on Contact(After insert,After Delete , After Undelete){
+     if(Trigger.isAfter){
+     		if(Trigger.isInsert){
+     			ContactTriggerHandler.accountUpdate(Trigger.new,null);
+     		}
+     		if(Trigger.isDelete){
+     			ContactTriggerHandler.accountUpdate(null,Trigger.Old);
+     		}
+     		if(Trigger.isUndelete){
+     		ContactTriggerHandler.accountUpdate(Trtigger.new,null);
+     		}
+     }
+}
+
+
+//HANDLER
+
+public class ContactTriggerHandler{
+
+	public static void accountUpdate(List<Contact> conNewList,List<Contact> conOldList){
+		Set<Id> accIds = new Set<Id>();
+		if(Trigger.isInsert || Trigger.isUndelete){
+			for(Contact con : conNewList){
+			 if(con.AccountId != null);
+				accIds.add(con.AccountId);
+			}
+		}
+		
+		if(Trigger.isDelete){
+			for(Contact con : conOldList){
+					if(con.AccountId != null){
+						accids.add(con.AccountId);
+					}
+			}
+		}
+		
+		if(accIds.isEmpty()) return;
+		Map<Id,Integer> conMap = new Map<Id,Integer>();
+		for(AggregateResult arr : [select count(id) countCon, Accounid accid from Contact where id in : accIds group by Accountid]){
+			conMap.put((Id) arr.get('accid'),(Number) arr.get('countCon'));
+		}
+		List<Account> accUpdateList = new List<Account>();
+		for(id id : accIds){
+				account acc = new account();
+				acc.id = id;
+				acc.Total_Contact__c = if(!conMap.isEmpty) conMap.get(id) : 0;
+				accUpdateList.add(acc);
+		}
+		
+		if(!accUpdateList.isEmpty){
+			Update accUpdateList;
+		}
+	}
+
+}
+==========================
+when contacts created update the account field.
+
+Trigger ContactTrigger on Contact(After insert, After delete){
+	if(Trigger.isAfter){
+		if(Trigger.isInsert){
+			ContactTriggerHandler.UpdateAccountField(Trigger.new,null);
+		}
+		if(Trigger.isDelete){
+				ContactTriggerHandler.UpdateAccountField(null,Trigger.old);
+		}
+	}
+}
+
+Public Class ContactTriggerHandler {
+	Public Static Void UpdateAccountField(List<Contact> conNewList,List<Contact> conOldList){
+	Set<Id> accIds = new Set<Id>();
+		if(Trigger.isInsert){
+			for(Contact con : conNewList){
+				if(con.AccountId != null){
+					accIds.add(con.AccountId);
+				}
+			}
+		}
+		if(Trigger.isDelete){
+			for(Contact con : conOldList){
+				if(con.AccountId != null){
+					accIds.add(con.AccountId);
+				}
+			}
+		}
+		
+		if(accIds.isEmpty) return;
+		Map<Id,Integer> accConCountMap = new Map<Id,Integer>();
+		for(AggregateResult arr : [select AccountId accId, Count(Id) conIdCount from Contact where id In : accIds Group by AccountId]){
+			accConCountMap.put((Id) arr.get('accId'),(Integer) arr.get('conIdCount'));
+		}
+		
+		if(!accConCountMap.isEmpty()){
+		List<Account> accUpdateList = new List<Account>();
+			for(Id Ids : accIds){
+				if(accConCountMap.containKey(con.AccountId)){
+					Account acc = new Account();
+					acc.id = Ids;
+					acc.total_contact__c = accConCountMap.get(Ids);
+					accList.add(acc);
+				}
+			}
+			if(!accUpdateList.isEmpty()){
+				Update accUpdateList;
+			}
+		}
+	}
+}
+
+9199024
+
+
+
+public class AccountHandler{
+	@auraEnabled
+	public static List<Account> getAccountRecords(){
+		return [select id AnnualRevenue from Account];
+	}
+}
+
+//write apex trigger when contact is insert or deleted update the account field
+// total_contacts__c
+
+//Trigger
+Trigger ContactTrigger on Contact(After insert, After Delete){
+	if(Trigger.isAfter){
+		if(Trigger.isInsert){
+			ContactHandler.UpdateContactsCountOnAccount(Trigger.new,null);
+		}
+		if(Trigger.isDelete){
+			ContactHandler.UpdateContactsCountOnAccount(null,Trigger.Old);
+		}
+	}
+}
+
+//Handler
+public class ContactHandler(){
+	public static void UpdateContactsCountOnAccount(List<Contact> conNewList, List<Contact> conOldList){
+		Set<Id> accIds = new Set<Id>();
+		if(Trigger.isInsert){
+			for(Contact con : conNewList){
+				if(con.AccountId != null){
+					accIds.add(con.AccountId);
+				}
+			}
+		}
+		if(Trigger.isDelete){
+			for(Contact con : conOldList){
+				if(con.AccountId != null){
+					accIds.add(con.AccountId);
+				}
+			}
+		}
+		
+		if(accIds.isEmpty()) return;
+		Map<Id,Integer> accConCountMap = new Map<Id,Integer>();
+		for(AggregateResult arr : [select accountId accId, Count(id) contactCount from Contact where AccountId in : accIds group by AccountId]){
+			accConCountMap.put((Id) arr.get('accId'), (Integer) arr.get('contactCount'));
+		}
+		
+		if(!accConCountMap.isEmpty){
+			List<Account> accUpdate= new List<Account>();
+			for(Id id : accIds){
+				Account acc =  new Account();
+				acc.Id = id;
+				acc.total_contact__c = accConCountMap.get(Id);
+				accUpdate.add(acc);
+			}
+			if(!accUpdate.isEmpty()){
+				Update accUpdate;
+			}
+		}
+	}
+}
+
+
+
+Trigger 1 - Update Parent field from child filed on insert or update.
+Trigger 2 - Update Child filed from Parent field on insert or update
+Trigger 3 - Count total contacts and update the Parent field - total contacts.
+
+
+Trigger Accounttrigger on Account(After insert,after update){
+	if(Trigger.isAfter){
+		if(Trigger.isInsert || trigger.isUpdate){
+			Trigge
+		}
+	}
+}
+
+
+
+
+
+=================
+//child to parent communication lwc example
+<template>
+    <lightning-card title='child to parent communication'>
+        <div class = 'slds-m-around_medium'>
+            <lightning-button label="Send data to Parent" onClick={sendDataToParent}></lightning-button>
+        </div>
+    </lightning-card>
+</template>
+
+//child js
+import {LightningElement} from 'lwc';
+export default class ChildComponent extends lightningElement{
+      sendDataToParent(){
+          const event = new CustomEvent('reply',detail:{'Hello,Parent data receievd!'}
+          this.dispatchEvent(event);
+      }
+}
+
+//Parent html
+<template>
+    <lightning-card title='Parent Component'>
+        <div class='slds-m-around_medium'>
+            <c-child-component reply={handleReply}></c-child-component>
+            <p>Child data recieved as below:</p> 
+            <p>{childReply}</p>
+        </div>
+    </lightning-card>
+</template>
+
+//Parent js
+import {lightningElement} from 'lwc';
+export default class ParentComponent extends LightningElement{
+    childReply;
+    handleReply(event){
+        this.childReply = event.detail;
+    }
+}
+
+
+======================================================
+//Parent to child communication
+<templte>
+    <lightning-card title='Parent to child communication'>
+        <div class = 'slds-m-around_medium'>
+            <lightning-input label="Enter value" value={name} onchange={handleChange}></lightning-input>
+            <br>
+            <c-child-component message-from-parent = {parentMessage}><c-child-component>
+        </div>
+    </lightning-card>
+</template>
+
+//Parent js
+import {LightningElement} from 'lwc';
+export default class ParentComponet extends LightningElement{
+    parentMessage;
+    handleChange(event){
+        this.parentMessage = event.target.value;
+    }
+}
+
+//child html
+<template>
+    <lightning-card title='child component'>
+        <div class='slds-m-around_medium'>
+            <p>Data from Parent is as below:</p>
+            <p>{messageFromParent}</p>
+        </div>
+    </lightning-card>
+</template>
+
+//Parent js
+import {LightningElement,api} from 'lwc';
+export default class ChildComponent extends LightningElement{
+    @api messageFromParent;
+}
+
+==================================================
+//get data on lightning data - table.
+
+import  {LightningElement,track} from 'lwc';
+import getFiveAccounts form '@salesforce/apex/AccountController.getFiveAccounts';
+export default class fetchDataFromAccount extends LightningElement{
+	@track accounts = [];
+	
+	columns = [
+		{label : 'AccountName',fieldName : 'Name'},
+		{label : 'Annual Revenue',fieldName : AnnualRevenue, type : 'Currency'}
+	];
+	
+	handleClick(){
+		getFiveAccounts()
+		.then(result => {
+				this.Accounts = result;
+		})
+		.catch(error =>{
+				console.log('Error fetching accounts',error);
+		})
+	}
+}
+
+
+<template>
+	<lightning-card title = 'Accounts data table'>
+		<div class='slds-m-around_medium'>
+			<lightning-button
+				label="fetch Accounts"
+				variant = "brand"
+				onClick={handleClick}>
+			</lightning-button>
+			
+			<template lwc : if = {accounts}>
+			 <lightning-datatable
+			 key-field = "Id"
+			 data = {accounts}
+			 columns = {columns}
+			 
+			 class = 'slds-m top_medium'>
+			 </lightning-datatable>	
+		</div>
+	</lightning-card>
+</template>
+
+<template>
+    <lightning-card title='Grand Parent to Parent'>
+        <div class = 'slds-m-around_medium'>
+            <c-child-componet ongrandChildMessage={handleGrandChildMessage}></c-child-componet>
+        </div>
+    </lightning-card>
+</template>
+
+import {LightningElement} from 'lwc';
+export default class ParentComponet extends LightningElement{
+        grandChildMessage;
+    handleGrandChildMessage(event){
+        this.grandChildMessage = event.detail;
+    }
+}
+
+//grabndChiulkd
+
+import {LightningElement} from 'lwc';
+export default class grabndChildComponet extends LightningElement{
+    
+    sendMessageToParent(event){
+        const evt = new CustomEvent('grandChildMessage',
+        {
+            detail : {'hello, from GrandChild'},
+            Bubbeles = true,
+            Composed = true;
+        });
+    }
+}
+
+======
+<template>
+    <lightning-card title = "save record">
+        <div class = 'slds-m-around_medium'>
+            <lightning-input 
+            label="=Enter Account Name"
+            value = {Name}
+            onchange={handleChange}
+            >
+            </lightning-input>
+            
+            <lightning-button
+            label="Save"
+            Variant = "Brand"
+            onclick = {saveRecord}
+            >
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>
+
+//js
+import {LightningElement} from 'lwc';
+import {ShowToastEvent} from 'lightning/PlatformShowtoastEvent';
+import saveAccountRecord from '@salesforce/apex/AccountController.createRecord';
+export default class SaveRecordExample extends LightningElement{
+    
+        accountName;
+        
+        handleChange(event){
+            this.accountName = event.target.value;
+        }
+    
+    saveRecord(){
+        saveAccountRecord({accName : this.accountName})
+        .then(result=>{
+            const evt = new ShowToastEvent({
+                title : 'success',
+                message : 'Record created successfully',
+                Variant : 'success'
+            });
+            this.dispatchEvent(evt);
+        })
+        .then(error=>{
+            const evt = new ShowToastEvent({
+                title : 'success',
+                message : error.body.message,
+                Variant : 'error'
+            });
+            
+            this.dispatchEvent(evt);
+        })
+    }
+}
+
+//AccountController
+public class AccountController{
+    public static void saveRecord(String accName){
+        Account acc = new Account();
+        acc.Name = accName;
+        insert acc;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
